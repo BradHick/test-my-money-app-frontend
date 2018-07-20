@@ -1,6 +1,19 @@
+/**
+|--------------------------------------------------
+| Import modules
+|--------------------------------------------------
+*/
 import { combineReducers } from 'redux';
 
+/**
+|--------------------------------------------------
+| Import components
+|--------------------------------------------------
+*/
+import DashboardReducer from '../dashboard/dashboardReducer';
+
+
 const rootReducer = combineReducers({
-  dashboard: () => ({ summary: { credit: 100, debt: 50 } })
+  dashboard: DashboardReducer
 });
 export default rootReducer;
