@@ -19,19 +19,30 @@ class BillingCycleList extends Component{
   
   componentWillMount() {
     this.props.getList();
-  }
+  };
+
+  renderRows(){
+    const list = this.props.list || [];
+    return list.map(bc => (
+      <tr key={ bc._id }>
+        <td>{ bc.name }</td>
+        <td>{ bc.month }</td>
+        <td>{ bc.year }</td>
+      </tr>
+    ));
+  };
   
   render() {
     return (
       <div>
         <table className='table'>
           <thead>
-            <tr>Nome</tr>
-            <tr>Mês</tr>
-            <tr>Ano</tr>
+            <th>Nome</th>
+            <th>Mês</th>
+            <th>Ano</th>
           </thead>
           <tbody>
-
+            { this.renderRows() }
           </tbody>
         </table>
       </div>
