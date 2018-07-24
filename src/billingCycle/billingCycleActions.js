@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const BASE_URL = 'http://localhost:3003/api';
 
 export function getList(){
@@ -9,3 +10,10 @@ export function getList(){
     payload: request
   };
 };
+
+export function create(values){
+  const request = axios.post(`${BASE_URL}/billingCycles`, values);
+  return {
+    type: 'TEMP'
+  };
+}
